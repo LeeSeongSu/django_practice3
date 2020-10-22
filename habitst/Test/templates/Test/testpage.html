@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}"> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet"> -->
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+</head>
+<body class="d-flex flex-column h-100">
+<header>
+    <nav class="navbar">
+        
+    </nav>
+</header>
+
+
+<main role="main" class="flex" style="margin-top: -3%;">
+    <br><br><br>
+    <div class="container">
+        <br><br>
+        <h4 class="title" style="font-family: 'Noto Serif KR', serif;"></h4>
+        
+        <br><br>
+        <div class="bar text-right pr-2"
+             style="width: {{ bar }}%; background-color: wheat; color: gray; font-size: 10px; font-weight: bolder;"
+             aria-valuenow="{{ bar }}" aria-valuemin="0" aria-valuemax="100">
+            {{ question.id }}/10
+        </div>
+
+        <div class="content" style="font-family: 'Noto Serif KR', serif;"><br><i class="fas fa-quote-left"></i>&nbsp;&nbsp;&nbsp;{{ question.title | linebreaksbr }}&nbsp;&nbsp;&nbsp;<i
+                class="fas fa-quote-right"></i>
+            <br><br>
+           
+        <form action="" method="POST" class="answer_button">
+            {% csrf_token %}
+            <input type="hidden" name="question_id" value="{{ question.id }}">
+            <input type="hidden" name="score" value="{{ question.score }}">
+            <input type="submit" class="answer" name="answer1" value="{{ question.opt1 }}"
+                   style="font-family: 'Noto Serif KR', serif;">
+        </form>
+
+        <form action="" method="POST" class="answer_button">
+            {% csrf_token %}
+            <input type="hidden" name="question_id" value="{{ question.id }}">
+            <input type="hidden" name="score" value="{{ question.score }}">
+            <input type="submit" class="answer" name="answer2" value="{{ question.opt2 }}"
+                   style="font-family: 'Noto Serif KR', serif;">
+        </form>
+
+        <form action="" method="POST" class="answer_button">
+            {% csrf_token %}
+            <input type="hidden" name="question_id" value="{{ question.id }}">
+            <input type="hidden" name="score" value="{{ question.score }}">
+            <input type="submit" class="answer" name="answer2" value="{{ question.opt3}}"
+                   style="font-family: 'Noto Serif KR', serif;">
+        </form>
+        
+        <form action="" method="POST" class="answer_button">
+            {% csrf_token %}
+            <input type="hidden" name="question_id" value="{{ question.id }}">
+            <input type="hidden" name="score" value="{{ question.score }}">
+            <input type="submit" class="answer" name="answer2" value="{{ question.opt4 }}"
+                   style="font-family: 'Noto Serif KR', serif;">
+        </form>
+      
+        <br><br><br><br>
+    </div>
+
+</main>
+
+<nav class="navbar">
+  
+</nav>
+<footer class="footer py-5">
+    <div class="container">
+      
+    </div>
+</footer>
+</body>
+
+<script>
+    // css 스크롤 내리면 올라오는 효과
+    function isElementUnderBottom(elem, triggerDiff) {
+        const {top} = elem.getBoundingClientRect();
+        const {innerHeight} = window;
+        return top > innerHeight + (triggerDiff || 0);
+    }
+
+    function handleScroll() {
+        const elems = document.querySelectorAll('.answer');
+        elems.forEach(elem => {
+            if (isElementUnderBottom(elem, -10)) {
+                elem.style.opacity = "0";
+                elem.style.transform = 'translateY(100px)';
+            } else {
+                elem.style.opacity = "1";
+                elem.style.transform = 'translateY(0px)';
+            }
+        })
+    }
+
+    window.addEventListener('scroll', handleScroll);
+</script>
+
+
+</html>

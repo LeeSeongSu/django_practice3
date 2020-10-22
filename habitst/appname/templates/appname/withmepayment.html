@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>habitst > withme > payment</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'appname/css/withme.css' %}">
+</head>
+<body>
+	<div class="withme">
+		<div class="withme-title">
+			{% if posts.image %}
+			<div><img src="{{ posts.image.url }}" alt=""></div>
+			{% endif %}
+			<div>{{posts.title}}</div>
+		</div>
+		<div class="withme-content">
+			<div>
+				<h3>모임 정보</h3>
+				<hr>
+				<div class="withme-con-1">
+					<p lang="ko">모임 이름 : {{posts.title}}</p>
+					<p lang="ko">모임 인원 : {{posts.member.count}} / {{posts.max_p}}</p>
+					<p lang="ko">모임 날짜 : {{posts.meet_date}}</p>
+					<p lang="ko">모임 장소 : {{posts.place}}</p>
+					<p lang="ko">*</p>
+					<p lang="ko">회비 : {{posts.price}}</p>
+					<p lang="ko">주최자 : {{posts.writer}}</p>
+				</div>
+			</div>
+			<div>
+				<h3>계약금 고지</h3>
+				<hr>
+				<div class="withme-con-1">
+					<p lang="ko">
+						'<b>{{posts.title}}</b>' 모임을 함께하시겠습니까?<br>
+						해비스트는 모임 노쇼방지 및 달포인트 적립을 위해<br>
+						소정의 계약금을 받고 있습니다.<br> 
+						모임에 도착하면 계약금이 환불되지만<br>
+						무단으로 모임에 참여하지 않은 경우 모임의 회비로 사용되게 됩니다.<br>
+						이 점 유의하시어 결제를 진행해 주시기 바랍니다.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="withme-button">
+			<h3>계약금 얼마</h3>
+			<a href="/shop">결제하기</a>
+		</div>
+	</div>
+</body>
+</html>

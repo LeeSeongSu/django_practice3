@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.signup-box{
+    font-family: 'GmarketSansMedium';
+    color: #03033f;
+    width: 658px;
+    height: 792px;
+    border: solid 4px #03033f;
+    background-color: #ffffff;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 90px;
+}
+
+.logo{
+    margin-top: 55px;
+    margin-bottom: 20px;
+}
+
+.signup{
+    margin-top: 30px;
+}
+
+#submit{
+    font-family: 'GmarketSansMedium';
+    border-radius: 27px;
+    background-color: #ffe31b;
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+#submit:hover{
+    background-color: #03033f;
+}
+
+.lang{
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: normal;
+}
+
+#test{
+    text-decoration: none;
+}
+#test:visited{
+    color: #03033f;
+    text-decoration: none;
+}
+#test:hover{
+    background-color: #ffe31b;
+}
+
+input[id="username"]{
+    font-family: 'GmarketSansMedium';
+    color: #03033f;
+    font-size: 18px;
+	width: 230px;
+    height: 40px;
+    border-style: none;
+    text-align: center;
+}
+input:focus[id="username"]{
+    outline: none;
+}
+
+input[id="email"]{
+    font-family: 'GmarketSansMedium';
+    color: #03033f;
+    font-size: 18px;
+	width: 230px;
+    height: 40px;
+    border-style: none;
+    text-align: center;
+}
+input:focus[id="email"]{
+    outline: none;
+}
+
+input[id="password"]{
+    font-family: 'GmarketSansMedium';
+    color: #03033f;
+    font-size: 18px;
+	width: 230px;
+    height: 40px;
+    border-style: none;
+    text-align: center;
+}
+input:focus[id="password"]{
+    outline: none;
+}
+
+input[id="nickname"]{
+    font-family: 'GmarketSansMedium';
+    color: #03033f;
+    font-size: 18px;
+	width: 230px;
+    height: 40px;
+    border-style: none;
+    text-align: center;
+}
+input:focus[id="nickname"]{
+    outline: none;
+}
+
+input[id="phonenumber"]{
+    font-family: 'GmarketSansMedium';
+    color: #03033f;
+    font-size: 18px;
+	width: 230px;
+    height: 40px;
+    border-style: none;
+    text-align: center;
+}
+input:focus[id="phonenumber"]{
+    outline: none;
+}
+
+input[id="profileimage"]{
+    font-family: 'GmarketSansMedium';
+    color: #03033f;
+    font-size: 18px;
+	width: 230px;
+    height: 40px;
+    border-style: none;
+    text-align: center;
+}
+input:focus[id="profileimage"]{
+    outline: none;
+}

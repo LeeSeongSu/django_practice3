@@ -1,0 +1,183 @@
+/*withme*/
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	unicode-range: U+AC00-U+D7A3;
+}
+
+@font-face {
+	font-family: 'GmarketSansLight';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*한글 글씨체 중 <p>태그를 사용한 것은 'GmarketSansLight'로 설정*/
+p:lang(ko){
+	font-family: 'GmarketSansLight'
+}
+
+
+/*전체를 감싸는 태그*/
+.withme{
+	font-family: 'bauhaus 93', 'GmarketSansMedium', serif;
+	display: grid;
+	grid-template-rows : 552px 719px 109px;
+	width: 1920px;
+	height: 1380px;
+}
+
+/* withmepayment : 모임의 제목과 대표 그림이 존재하는 태그*/
+.withme-title{
+	text-align: center;
+	background-color: #03033F;
+	font-size: 100px;
+	color: #FFE31B;
+	padding: 60px 0;
+}
+
+/*withmepayment : 모임정보와 계약금 고지가 들어있는 태그*/
+.withme-content{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	/*	border : 1.5px solid #03033F;*/
+	font-size: 35px;
+}
+
+/*withme에만 있는 선택자*/
+.withme-title p{
+	font-size: 50px;
+	margin: 0;
+	padding: 0;
+}
+
+.content-img{
+	text-align: center;
+}
+
+.withme-title .withme-a a{
+	font-size: 30px;
+	color: #FFE31B;
+	border : 2.5px solid #FFE31B;
+	padding: 10px;
+}
+
+.withme-a {
+	text-align: right;
+	margin: 0 100px 0 0;
+}
+
+.withme-content img{
+	margin: 100px;
+	width: 342px;
+	height: 342px;
+}
+
+.withme-con{
+	padding: 60px 0;
+}
+
+.withme-con p{
+	font-size: 45px;
+	margin: 0;
+	padding: 0 100px;
+}
+
+.withme-con-but{
+	margin: 20px 100px 0;
+}
+
+.withme-con-but a{
+	border: 2.5px solid #03033F;
+	border-radius: 20px;
+	font-size: 45px;
+	color: #03033F;
+	padding: 10px;
+	margin: 0 10px 0 0;
+	text-align: center;
+}
+
+.withme-con-but .level-img{
+	width: 61px;
+	height: 61px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.if-click-withme{
+	text-align: center;
+}
+
+.if-click-withme p{
+	text-align: center;
+	font-size: 45px;
+}
+
+.withme-member{
+	display: grid;
+/*	grid-auto-columns: 50% 50%;*/
+}
+
+.withme-member p{
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.withme-member img{
+	display: inline-block;
+	height: 72px;
+	width: 72px;
+	margin: 0;
+}
+
+/*withmepayment에만 있는 선택자*/
+.withme-title img{
+	width: 275px;
+	height: 275px;
+	margin: 0 5px 0 0;
+}
+
+/*모임정보가 있는 div 안에 있는 p태그만 건들거라 따로 뺌*/
+.withme-con-1{
+	padding: 60px 0;
+}
+
+.withme-con-1 p{
+	margin: 0;
+	padding: 0 100px;
+}
+
+.withme-content h3{
+	font-size: 53px;
+	color: #03033F;
+	text-align: center;
+	margin: 30px 0;
+}
+
+.withme-content hr{
+	border: 0.5px solid #03033F;
+	margin: 0 30px 20px;
+}
+
+/*결제버튼이 있는 태그*/
+.withme-button{
+	text-align: center;
+	font-size: 30px;
+	margin: 10px 0;
+	padding: 20px 0 0;
+}
+
+.withme-button h3{
+	display: inline;
+	margin: 3px 0 0 0;
+}
+
+.withme-button a{
+	color: #FF1111;
+	border: 3px solid #FF1111;
+	padding: 3px;
+}

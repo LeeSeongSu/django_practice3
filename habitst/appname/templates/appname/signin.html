@@ -1,0 +1,52 @@
+{% load static %}
+{% load socialaccount %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'appname/css/login.css' %}">
+</head>
+
+{% block content %}
+<body>
+    <div class="login-box">
+        
+        <div class="logo"><img src="{% static 'appname/img/logo-wh.jpg' %}" alt="해비슷"></div>
+        
+        
+        <div class="login">
+            <form method="POST">
+                <div class="login-table">
+                    {% csrf_token %}
+                    <input type="text" placeholder="ID" name="username" maxlength="150" required="" id="id_username"><br><br>
+                    <input type="text" placeholder="PassWord" name="password" maxlength="128" required="" id="id_password">
+                    <!-- {{ signin_form.as_p }} -->
+                </div>
+                <br><input type="submit" value="로그인" id="submit"> 
+            </form>
+        </div>
+
+        <div class="lang">
+            <br><br>
+            <input type="checkbox" id="cb">
+            <label for="cb"></label>
+            자동 로그인<br><br>
+            <br><br><br><br>
+            
+            <div class="google">
+                <img src="{% static 'appname/img/google.jpg' %}" alt="구글자동로그인" id=goog>
+                <p id="goo"><a href="{% provider_login_url 'google' %}">구글 로그인</a></p>
+            </div>
+            <br><br>
+
+            
+            <hr style="width: 450px; border: solid 1px #03033f;">
+            <br>
+            <a href="{% url 'main' %}" id=lostid>아이디 찾기</a>
+            <a href="{% url 'main' %}" id=lostpw>비밀번호 찾기</a>   
+            <a href="{% url 'signup' %}" id=su>회원가입</a>
+        </div>
+
+
+
+    </div>
+</body>
+{% endblock %}

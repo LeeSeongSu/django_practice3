@@ -1,0 +1,41 @@
+{% load static %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'appname/css/postblog.css' %}">
+</head>
+
+{% block content %}
+<body>
+  <div class = post-box>
+      <div class = post>
+          <h1>제목</h1>
+          <h2>해시태그</h2>
+          <hr style="width: 1620px; border: solid 2px #03033f;">
+          <div class = style>
+              <id class = bold>B</id> <id class = italic>I</id>  U T &nbsp;&nbsp;&nbsp;- size + 
+          </div>
+          <!-- <hr style="width: 1620px; border: solid 2px #03033f;"> -->
+          <div class = blog-box>
+              <h3>사진과 동영상을 첨부하여 자신의 취미를 기록해보세요 !</h3>
+          </div>
+
+          <div class = bot-bar>
+             <div class = pic-box>
+                 + 
+             </div>
+             <div class = pic>
+                 사진
+             </div>
+             <div class = vid-box>
+                 +
+             </div>
+             <div class = vid>
+                 동영상
+            </div>
+  
+             <input type="submit" value="저장" id="save"> 
+          </div>
+      </div>
+  </div>
+</body>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'appname/base.html' %}
+
+{% block content %}
+{% load humanize %}
+
+<!-- 홈화면에 나오는 글목록입니다 -->
+<div class="side">
+  <a href="meet_create" class="btn btn-primary btn-xl rounded-pill mt-5">예약잡기</a>
+<div class="row">
+  
+  {% for item in item_list %}
+  <div class="col-md-3 ftco-animate"> 
+        <div class="destination">
+          
+          {% if item.photo %}
+        <a href="{% url 'shop:withme2' %}?id={{item.id}}" class="img img-2 d-flex justify-content-center align-items-center"><img class="img img-2 d-flex justify-content-center align-items-center" src="{{ item.photo.url }}" alt="" width=100%></a>
+          {% endif %}
+      
+          </a>
+          <div class="text p-3">
+            <div class="d-flex">
+              <div class="one">
+                <h3><a href="{% url 'shop:withme2' %}?id={{item.id}}">
+                  <p>모임이름 : {{item.name}} <br>
+                    모임날짜 : {{item.date_select}}</p>
+                    주최자 : {{item.username}}</p>
+                    
+                </a></h3>
+                <p class="rate">
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star-o"></i>
+                </p>
+              </div>
+            </div>
+            
+            <hr>
+            {% if item.desc %}
+                    <p class="card-text">내용 : {{item.desc}}</p>
+            {% endif %}
+                    <p class="card-text">회비 : {{item.amount|intcomma}}</p> <hr>
+                    <a href="{% url 'shop:order_new' item.id %}" class="btn btn-primary">구매하기</a>
+                    참가자 :  
+                {% for order in Order_list %}
+                {% if order.name == item.name%}
+                {% if order.status == "paid" %}
+                <h3><p>{{order.user}}님</p></h3>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+</div>
+</div>
+<div class="row mt-5">
+  <div class="col text-center">
+    <div class="block-27">
+    <ul>
+      <li><a href="#">&lt;</a></li>
+      <li class="active"><span>1</span></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">&gt;</a></li>
+    </ul>
+    </div>
+  </div>
+  </div>
+</div> <!-- .col-md-8 -->
+</div>
+
+{% endblock %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    var sort = getUrlParameter('sort');
+    if(sort == 'likes'){
+      $('.sort-likes').prop('selected', 'selected')
+    }else if(sort == 'date'){
+      $('.sort-date').prop('selected', 'selected')
+    }
+  });
+  
+</script>
+
+
+
+
+ <!-- loader -->
+ <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+ <script src="js/jquery.min.js"></script>
+ <script src="js/jquery-migrate-3.0.1.min.js"></script>
+ <script src="js/popper.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script src="js/jquery.easing.1.3.js"></script>
+ <script src="js/jquery.waypoints.min.js"></script>
+ <script src="js/jquery.stellar.min.js"></script>
+ <script src="js/owl.carousel.min.js"></script>
+ <script src="js/jquery.magnific-popup.min.js"></script>
+ <script src="js/aos.js"></script>
+ <script src="js/jquery.animateNumber.min.js"></script>
+ <script src="js/bootstrap-datepicker.js"></script>
+ <script src="js/jquery.timepicker.min.js"></script>
+ <script src="js/scrollax.min.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+ <script src="js/google-map.js"></script>
+ <script src="js/main.js"></script>

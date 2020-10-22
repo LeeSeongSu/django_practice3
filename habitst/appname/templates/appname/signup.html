@@ -1,0 +1,44 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'appname/css/signup.css' %}">
+</head>
+
+
+
+{% block content %}
+<body>
+    <div class="signup-box">
+        
+        <div class="logo"><img src="{% static 'appname/img/logo-wh.jpg' %}" alt="해비슷"></div>
+        
+        
+        <div class="signup">
+            <form method="POST">
+                <div class="signin-table">
+                    {% csrf_token %}
+                    <input type="text" placeholder="USERNAME" name="username" maxlength="150" required="" id="id_username"><br><br>
+                    <input type="email" placeholder="EMAIL" name="email" maxlength="254" id="id_email"><br><br>
+                    <input type="text" placeholder="PASSWORD" name="password" maxlength="128" required="" id="id_password"><br><br>
+                    <input type="text" placeholder="NICKNAME" name="phone_number" maxlength="20" required="" id="id_phone_number"><br><br>
+                    <input type="file" placeholder="PROFILE IMAGE" name="profile_image" accept="image/*" id="id_profile_image"><br><br>
+                    <!-- {{ form.as_p }} -->
+                </div>
+                <!-- <input type="user_form.username" placeholder="USERNAME" id="username"><br><br>
+                <input type="user_form.email" placeholder="EMAIL" id="email"><br><br>
+                <input type="user_form.password" placeholder="PASSWORD" id="password"><br><br>
+                <input type="user_form.nickname" placeholder="NICKNAME" id="nickname"><br><br>
+                <input type="user_form.phone_number" placeholder="PHONE NUMBER" id="phonenumber"><br><br>
+                <input type="user_form.profile_image" placeholder="PROFILE IMAGE" id="profileimage"><br><br> -->
+                <!-- <br><input type="submit" value="회원가입" id="submit">  -->
+                <div class="lang">
+                    <a href="{% url 'signin' %}" id=test>취미테스트/signin</a><br><br><br>
+                    <hr style="width: 450px; border: solid 1px #03033f;">
+                    <br><input type="submit" value="회원가입" id="submit"> 
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}
+

@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+            
+
+.post-box{
+    width: 1620px;
+    height: 780px;
+    border: solid 7px #03033f;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 7px;
+    padding-top: 3px;
+}
+
+.style{
+    font-family: 'GmarketSansMedium';
+    font-size: 30px;
+    color: #03033f;
+    text-align: right;
+}
+.bold{
+    font-family: 'GmarketSansMedium';
+    font-weight: bold;
+}
+.italic{
+    font-family: 'GmarketSansMedium';
+    font-style: italic;
+}
+
+.blog-box{
+    /* border: solid 3px #03033f; */
+    width: 1500px;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.bot-bar{
+    /* border: solid 3px #03033f; */
+    width: 1560px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 9px;
+}
+
+.pic-box{
+    float: left;
+    width: 35px;
+    height: 35px;
+    border: solid 3px #03033f;
+    font-family: 'GmarketSansMedium';
+    font-size: 30px;
+}
+.pic{
+    font-family: 'GmarketSansMedium';
+    float: left;
+    font-size: 30px;
+    margin-left: 8px;
+    margin-top: 3px;
+    margin-right: 25px;
+}
+
+.vid-box{
+    float: left;
+    width: 35px;
+    height: 35px;
+    border: solid 3px #03033f;
+    font-family: 'GmarketSansMedium';
+    font-size: 30px;
+}
+.vid{
+    font-family: 'GmarketSansMedium';
+    float: left;
+    font-size: 30px;
+    margin-left: 8px;
+    margin-top: 3px;
+}
+
+#save{
+    float: right;
+    margin-top: -7px;
+    font-family: 'GmarketSansMedium';
+    border-radius: 27px;
+    background-color: #03033f;
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 30px;
+    padding: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+#save:hover{
+    background-color: #ffe31b;
+}
+
+h1{
+    font-family: 'GmarketSansMedium';
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1.08;
+    text-align: left;
+    color: #03033f;
+}
+
+h2{
+    font-family: 'GmarketSansLight';
+    font-size: 30px;
+    color: #03033f;
+    text-align: left;
+}
+
+h3{
+    font-family: 'GmarketSansLight';
+    font-size: 25px;
+    color: #03033f;
+    text-align: left;
+}

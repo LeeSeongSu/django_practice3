@@ -1,0 +1,42 @@
+{% load static %}
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'appname/css/postwithme.css' %}">
+</head>
+
+{% block content %}
+<body>
+  <div class = post-box>
+      <div class = post>
+          <h1>모임이름</h1>
+          <h2>해시태그</h2><br>
+          <h2>모임 인원</h2>
+          <h2>모임 날짜</h2>
+          <h2>모임 장소</h2>
+          <h2>모임 규칙</h2> <br>
+          <hr style="width: 100%; border: solid 2px #03033f;">
+          <h3>간단하게 모임을 소개해보세요 !</h3><br><br>
+          <div class = bot-bar>
+             <div class = pic-box>
+                 + 
+             </div>
+             <div class = pic>
+                 대표 사진
+             </div>
+  
+             <input type="submit" value="만들기" id="save"> 
+          </div>
+      </div>
+  </div>
+</body>
+
+<!-- 지예가 쓴 코드 -->
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <input type="submit" value="만들기">
+</form>
+
+{% endblock %}

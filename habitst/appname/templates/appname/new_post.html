@@ -1,0 +1,9 @@
+{% block content %}
+<form method="post" action="{% url 'board:post_list' board.id %}">
+    {% csrf_token %}
+    <input id="id_new_post_title" name="post_title_text" placeholder="Insert Title"/><br/>
+    {{ form|safe }}
+    <br/>
+    <button type="submit">등록</button>
+</form>
+{% endblock %}

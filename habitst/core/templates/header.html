@@ -1,0 +1,75 @@
+{% load static %}
+{% block nav %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>HABITST</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static 'appname/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'appname/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'appname/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'appname/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'appname/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'appname/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'appname/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'appname/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'appname/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'appname/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'appname/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'appname/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'appname/css/postblog.css' %}">
+  </head>
+  <body>
+
+  <!-- START nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container" style="background-color:rgba(3,3,63,1); ">
+		
+        <a class="navbar-brand" href="{% url 'main' %}"><img id="_logo_back" src="{% static 'appname/images/logo_back.png' %}">&nbsp;&nbsp; HABITST</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+         </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          
+          <form class="d-block d-flex" action="{% url 'search' %}" method="post">
+            <div class="fields d-block d-flex">
+            {% csrf_token %}
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="q" value="{{q}}">
+            <div class="select-wrap one-third">
+            <button class="search-submit btn btn-primary" type="submit"><i class="glyphicon glyphicon-search">SEARCH</i></button>
+          </div>
+        </div>
+            </form>
+
+		      <li class="nav-item active"><a href="{% url 'main' %}" class="nav-link">홈</a></li>
+		      <li class="nav-item active"><a href="{% url 'Test:main' %}" class="nav-link">취미 분석 테스트</a></li>
+          <li class="nav-item active"><a href="hotel.html" class="nav-link">취미 블로그</a></li>
+          <li class="nav-item active"><a href="shop" class="nav-link">취미 모임</a></li>
+          <li class="nav-item active"><a href="{% url 'myblog' %}" class="nav-link">취미 게시판</a></li>
+	    	  <li class="nav-item active"><a href="{% url 'create' %}" class="nav-link">글쓰기</a></li>
+		      <li class="nav-item cta"><a href="{% url 'signin' %}" class="nav-link"><span>로그인</span></a></li>
+         </ul>
+        </div>
+	    </div>
+    </nav>
+	    <div style="background-color:rgba(3,3,63,1);"><br><br><br><br><br> </div>
+
+      <!-- END nav -->
+  {% endblock %}
+
+
+  

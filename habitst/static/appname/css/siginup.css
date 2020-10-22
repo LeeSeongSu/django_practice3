@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.signup-box{
+    font-family: 'GmarketSansMedium';
+    color: #03033f;
+    width: 658px;
+    height: 792px;
+    border: solid 4px #03033f;
+    background-color: #ffffff;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 90px;
+}
+
+.logo{
+    margin-top: 75px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>나와 어울리는 시집 찾기</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+</head>
+<body class="d-flex flex-column h-100">
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a class="navbar-brand" href="{% url 'Test:main' %}"></a>
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="flex">
+    <div class="container">
+        <div class="tester_name" style="max-width: 100%;">
+            <br>
+            <h3 style="font-family: 'Noto Serif KR', serif;">취미테스트</h3>
+            <br>
+            <h6 style="font-family: 'Noto Serif KR', serif;">"취미테스트."</h6>
+           
+            <br>
+          
+            <form action="" method="GET">
+                {% csrf_token %}
+               
+                <br>
+                <br>
+                <input type="submit" class="name_btn" value="테스트 시작하기" style="font-family: 'Noto Serif KR', serif;">
+            </form>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+</main>
+<nav class="navbar">
+    <div class="logo2" style="padding-top: 0%; padding-left: 15px;">
+      
+    </div>
+</nav>
+
+<footer class="footer py-5">
+    <div class="container">
+    
+    </div>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+{% extends 'appname/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>habitst > withme</title>
+<!-- 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> -->
+	<link rel="stylesheet" type="text/css" href="{% static 'appname/css/withme.css' %}">
+</head>
+<body>
+<div class="withme">
+	<div class="withme-title">
+		<div>{{posts.name}}</div>
+		<div><p lang="ko">{{posts.desc}}</p></div>
+		<div class="withme-a"><a href="{% url 'shop:withmepayment' pk=posts.pk %}">같이하기</a></div>
+	</div>
+	<div class="withme-content">
+		{% if posts.photo %}
+		<div class="content-img"><img src="{{ posts.photo.url }}" alt=""></div>
+		{% endif %}
+		<div>
+			<div class="withme-con">
+					<p lang="ko">모임 이름 : {{posts.name}}</p>
+					<p lang="ko">모임 인원 : {{posts.member.count}} / {{posts.max_p}}</p>
+					<p lang="ko">모임 날짜 : {{posts.date_select}}</p>
+					<p lang="ko">모임 장소 : {{posts.place}}</p>
+					<p lang="ko">*</p>
+					<p lang="ko">회비 : {{posts.amount}}</p>
+					<p lang="ko">주최자 : {{posts.username}}</p>
+					<div class="withme-con-but">
+						<a href="#">모임멤버</a>
+						<a href="{% url 'core:chat' name=posts.username %}"><img class="level-img" src="#">주최자와 1대1 문의</a>
+						<!-- 모임멤버 클릭하면 나오는 html -->
+						<!-- <div class="if-click-withme">
+							<p lang="ko">모임멤버</p>
+							<hr>
+							<div class="withme-member">
+								<div><img src="#"><p>닉네임</p></div>
+								<div><img src="#"><p>닉네임</p></div>
+								<div><img src="#"><p>닉네임</p></div>
+								<div><img src="#"><p>닉네임</p></div>
+								<div><img src="#"><p>닉네임</p></div>
+								<div><img src="#"><p>닉네임</p></div>
+							</div>
+						</div> -->
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<!--<a href="/hashtag/{{posts.hashtag_field}}">{{posts.hashtag_field}}</a>-->
+{% endblock %}

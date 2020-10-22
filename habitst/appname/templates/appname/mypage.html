@@ -1,0 +1,53 @@
+{% extends 'appname/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>{{ user }}의 프로필</h2>
+                <hr>
+                
+                {% if test_list.result == None %}
+                취미테스트를 수행하지 않아 추천목록이 없습니다. <a href="{% url 'Test:main' %}">테스트 하러가기</a>
+                {% else %}
+                <h2>{{user}}님을 위한 취미 추천은
+                <strong>{{test_list.result}}</strong>입니다.</h2><a href="{% url 'Test:main' %}">테스트 하러가기</a>
+                {% endif %}
+                <hr>    
+                <h3>구매내역</h3>
+                <table class="table table-hover table=bordered">
+                    <thead>
+                    <tr>
+                        <th>상품명</th>
+                        <th>상품가격</th>
+                        <th>처리결과</th>
+                        <th>결과일시</th>
+                        <th>환불</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in order_list %}
+                    {% if order.status == 'paid'%}
+                        <tr>
+                            
+                            <td>{{ order.name }}</td>
+                            <td>{{ order.amount_html }}</td>
+                            <td>{{ order.status_html }}</td>
+                            <td>{{ order.paid_at|default:"-" }}</td>
+                            {% if order.is_paid_ok %}
+                            <td><a href="{% url 'order_cancel' order.imp_uid %}" class="btn btn-danger col-xs-12"><i class="fa fa-times"></i> 주문 취소</a></td>
+                            {% endif %}    
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                    
+                   
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends 'appname/base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+
+
+{% block content %}
+<div class="hero-wrap js-height" style="background-color:rgba(255,152,163,1);">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-height align-items-center justify-content-start" data-scrollax-parent="true">
+      <div class="col-md-9 ftco-animate">
+  <p>
+
+    <br><br> 해비슷 님에게만 드리는 9월 한정 혜택 <br>지금 로그인 한 사람 : {{ user.username }}
+
+  </p>
+  <h3 class="mb-4">
+    <strong>
+      모임 장소가 필요한 habitst 에게 <br>
+      초특가로 yanolja 를 즐길 수 있는 기회 
+    </strong>
+  </h3>
+        <p class="browse d-md-flex">
+           <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><strong>#패러글라이딩</strong></a></span>
+           <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><strong>#보드게임</strong></a></span> 
+           <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><strong>#등산</strong></a></span>
+  </p>
+  <br><br>
+  <img id="_bg" src="{% static 'appname/images/_bg@2x.png' %}">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 홈화면에 나오는 글목록입니다 -->
+<br>
+<h4 class="dia"><strong>This week best habitst list!</strong></h4>
+<div class="side">
+
+<div class="row">
+  {% for post in posts %}
+
+  <div class="col-md-3 ftco-animate"> 
+    
+        <div class="destination">
+          
+          {% if post.image %}
+          <a href="{% url 'more' %}?id={{post.id}}" class="img img-2 d-flex justify-content-center align-items-center"><img class="img img-2 d-flex justify-content-center align-items-center" src="{{ post.image.url }}" alt="" width=100%></a>
+          {% endif %}  
+      
+          </a>
+          
+          <div class="text p-3">
+            <div class="d-flex">
+              <div class="one">
+                <a href="{% url 'more' %}?id={{post.id}}">
+                <h6>{{post.title}}</h6>
+                </a>
+              </div>
+            </div>
+            <hr>
+            <p>{{post.content|slice:":5"|safe}}....</p>
+            <a href="{% url 'more' %}?id={{post.id}}">자세히</a><hr>
+            {{post.writer}} 회원님
+            <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="{% url 'update' pk=post.pk %}"  role="tab" aria-controls="v-pills-goal" aria-selected="false">수정하기</a>        
+              <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="{% url 'delete' pk=post.pk %}"  role="tab" aria-controls="v-pills-mission" aria-selected="false">삭제하기</a>  
+              </div>
+          </div>
+          
+        </div>
+
+      </div>
+      {% endfor %}
+</div>
+</div>
+<div class="row mt-5">
+  <div class="col text-center">
+    <div class="block-27">
+    <ul>
+      <li><a href="#">&lt;</a></li>
+      <li class="active"><span>1</span></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">&gt;</a></li>
+    </ul>
+    </div>
+  </div>
+  </div>
+</div> <!-- .col-md-8 -->
+</div>
+
+{% endblock %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    var sort = getUrlParameter('sort');
+    if(sort == 'likes'){
+      $('.sort-likes').prop('selected', 'selected')
+    }else if(sort == 'date'){
+      $('.sort-date').prop('selected', 'selected')
+    }
+  });
+  
+</script>
+
+
+
+<!-- 기존 메인화면에 있었던 로그인, 좋아요 최신순 폼-->
+  <!-- <div class="masthead-content">
+    <div class="container">
+      {% if user.is_authenticated %}
+      <h2 class="masthead-subheading mb-0">{{ user.username }}님이 로그인하셨습니다</h2>
+      <a href="{% url 'logout' %}"> sign out</a>
+      {% else %}
+      <form method="POST" action="/signin">
+        {% csrf_token %}
+        {{ signin_form.as_p}}
+        <input type="submit" value="submit">
+      </form>
+      <a href="{% url 'signup' %}">회원가입하기</a>
+      {% endif %}
+      <a href="{% provider_login_url 'google' %}">구글 로그인</a>
+      <a href="{% provider_login_url 'naver' %}">네이버 로그인</a>
+      <a href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
+      <a href="/create" class="btn btn-primary btn-xl rounded-pill mt-5">Write a Post</a>
+    </div>
+  </div>
+</header>
+<select id="sort-select" onchange="location = this.value;">
+  <option value="/">정렬방식</option>
+  <option class="sort-date" value="?sort=date" name='최신'>최신순</option>
+  <option class="sort-likes" value="?sort=likes" name='좋아요'>좋아요순</option>
+</select> -->
+ <!-- loader -->
+ <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+ <script src="js/jquery.min.js"></script>
+ <script src="js/jquery-migrate-3.0.1.min.js"></script>
+ <script src="js/popper.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script src="js/jquery.easing.1.3.js"></script>
+ <script src="js/jquery.waypoints.min.js"></script>
+ <script src="js/jquery.stellar.min.js"></script>
+ <script src="js/owl.carousel.min.js"></script>
+ <script src="js/jquery.magnific-popup.min.js"></script>
+ <script src="js/aos.js"></script>
+ <script src="js/jquery.animateNumber.min.js"></script>
+ <script src="js/bootstrap-datepicker.js"></script>
+ <script src="js/jquery.timepicker.min.js"></script>
+ <script src="js/scrollax.min.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+ <script src="js/google-map.js"></script>
+ <script src="js/main.js"></script>

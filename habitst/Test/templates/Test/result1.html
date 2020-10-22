@@ -1,0 +1,76 @@
+{% load static %}
+{% load social_share %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/re01.css' %}"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+</head>
+
+<body class="d-flex flex-column h-100">
+<header>
+    <nav class="navbar">
+      
+    </nav>
+</header>
+
+<main role="main" class="flex">
+    <div class="container">
+        <div>
+            <br>
+            <h5 style="font-family: 'Noto Serif KR', serif;"><strong>{{ tester.name }}</strong>님에게 적합한 취미는<br><br>
+                <strong>{{ book.name }}</strong></h5>
+        </div>
+        <div class="detail">
+            <br>
+            <p class="con2" style="font-family: 'Noto Serif KR', serif;"></i>&nbsp;&nbsp;&nbsp;{{ book.content| linebreaksbr  }}&nbsp;&nbsp;&nbsp;
+                  </p><br>
+            <p><img src="{{ book.img }}" width="250wv" height="400vh"></p><br><br>
+           
+        </div>
+
+
+        <br><br><Br>
+
+      
+        <br> <br>
+       
+        <br> <br>
+        <a href="{% url 'main' %}"><button type="button" class="btn btn-light">홈으로 돌아가기</button></a>
+        <button type="button" class="btn btn-light">{% post_to_facebook object_or_url "페이스북 공유" %}</button>
+        <br><br><br>
+    </div>
+</main>
+
+<nav class="navbar">
+    <div class="logo2" style="padding-top: 0%; padding-left: 15px;">
+      
+    </div>
+</nav>
+<footer class="footer py-5">
+    <div class="container">
+      
+    </div>
+</footer>
+
+
+</body>
+<script>
+    function CopyUrlToClipboard() {
+        var obShareUrl = document.getElementById("Url");
+        obShareUrl.value = "http://baesisi.pythonanywhere.com/";
+        obShareUrl.select();
+        document.execCommand("copy");
+        obShareUrl.blur();
+        alert("테스트 링크가 복사되었습니다!");
+    }
+</script>
+</html>
