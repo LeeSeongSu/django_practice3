@@ -17,7 +17,7 @@ class MessageModelSerializer(ModelSerializer):
         user = self.context['request'].user
         a = self.context['request'].GET('name')
         recipient = get_object_or_404(
-            CustomUser.objects.filter(username=a), username=validated_data['recipient']['username'])
+            CustomUser, username=validated_data['recipient']['username'])
         msg = MessageModel(recipient=recipient,
                            body=validated_data['body'],
                            user=user)
