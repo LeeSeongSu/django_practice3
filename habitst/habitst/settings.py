@@ -29,7 +29,7 @@ IAMPORT_API_SECRET = 'k28K0nkm098hSlkFuQ7U6yaCLMX0pR9JUhuVFOiGYqXQLiwg8DbeclRX7P
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
